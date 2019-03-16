@@ -1,0 +1,225 @@
+<?php
+session_start();
+ ?>
+
+<html>
+<head><title>parlour</title>
+<style>
+div
+{   font-size:30px;
+}
+a
+{
+  text-decoration:none;
+   text-decoration-color: darkviolet;
+    color:white;
+    float:inherit;
+    margin-top: -20px;
+    font-size:20px;
+}
+    figure{
+        float:inherit;
+        align-items: center;
+        align-content: center;
+        align-self: center;
+    }    
+.center {
+    
+    float: left;
+    text-align: center;
+}
+    .s1{
+        margin:10px;
+        padding:20px:
+    }
+    p{
+        color:red;
+    }
+    table{
+        padding: 10px;
+    }
+    
+</style>
+</head>
+<body bgcolor="purple" style="opacity:8" >
+<div style='background-color: purple' align="center">
+<section>
+<img src="im2.png" style="height: 90px;" width="250px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
+</section>    
+    
+ </div>
+    <?php
+    
+     $form_value1 =$_SESSION['userGet1'];
+     $form_val=substr($form_value1,0,5);
+    ?>
+     
+    <center><p style=color:pink;font-size:30; >Welcome <?php echo $form_val; ?> to our beauty salon</p> </center>  
+    <section class="s1" >
+    <div>
+    
+    </div>     
+</section>
+<div style="color:pink">
+    <center>
+        <nav>
+       
+<a href="admin.html"><i>|VIEW EMPLOYEE|</i></a>
+ <a href="admin.html"><i>MODIFY EMPLOYEE DETAILS|</i></a>  
+<a href="admin.html"><i>ADD SERVICE</i></a>              
+<a href="admin.html"><i>|CUSTOMER DETAILS|</i></a>
+<a href="admin.html"><i>CUSTOMER FEEDBACK|</i></a>
+<a href="admin.html"><i>LOGOUT|</i></a>
+  
+</nav>  
+</center>
+
+ </div>  
+    
+ <section>
+<h2 style="color:white" align="center">EMPLOYEE DETAILS
+</h2>   <br>
+ 
+<form  align="center" novalidate >
+    
+<table align="center">
+<tr>
+        <td style="color:orange">EMAIL ID</td>
+    <td>
+      <input type="email" id="adid" name="adid" required><br> 
+    </td><td><p id="e1"></p></td>
+    </tr>    
+<tr>
+    <td style="color:orange">NAME</td>
+<td>
+   
+   
+   <input type="text"  id="adname" name="adname"  pattern="[a-zA-Z]*" title="Please enter on alphabets only" required><br>
+</td> 
+<td>
+    <p id="e2" ></p>
+</td>
+</tr>   
+   <tr>
+    <td style="color:orange">PHONE NUMBER</td>
+<td>
+   
+   
+   <input type="text"  id="adph" name="adph" maxlength="10" pattern="[0-9]{10}*" required ><br>
+</td> 
+<td>
+    <p id="e3" ></p>
+</td>
+</tr> 
+    <tr>
+    <td style="color:orange">SPECIALIST</td>
+<td>
+   
+   
+   <input type="text"  id="adsp" name="adsp" pattern="[a-zA-Z]*"  title="Please enter on alphabets only" required ><br>
+</td> 
+<td>
+    <p id="e4" ></p>
+</td>
+</tr>  
+
+    <tr>
+    <td style="color:orange">EXPERIENCE</td>
+<td>
+   
+   
+   <input type="text"  id="adex" name="adex" pattern="[0-9]*"  required>
+   
+</td> 
+<td>
+    <p id="e5" ></p>
+</td>
+</tr>  
+    </table><br>
+     <center>
+    <input type="submit" id="adbtn" value="ADD" style="color:deeppink;">
+    
+    
+</center>
+</form>  
+     
+     
+</section> 
+
+    <script>
+     var btn3=document.getElementById('adbtn');
+          btn3.onclick=function(e){
+              
+               var b1= check_validation3();
+              if(b1==false)
+                  {
+                      e.preventDefault();
+                  }
+          }
+           function check_validation3(){  
+            var ad1=document.getElementById('adid');
+            var name1=document.getElementById('adname');
+            var pass1=document.getElementById('adph');
+            var aadd=document.getElementById('adsp');   
+            var acity=document.getElementById('adex');
+               
+             if(ad1.checkValidity)
+              {
+                   console.log("required");
+                  document.getElementById("e1").innerHTML=ad1.validationMessage;
+                  if(ad1.validationMessage.toString().length!=0)
+                      check=0;
+              }   
+               
+                if(name1.checkValidity)
+              {
+                 // console.log("required");
+                  document.getElementById("e2").innerHTML=name1.validationMessage;
+                  if(name1.validationMessage.toString().length!=0)
+                      check=0;
+              }
+               
+              if(pass1.checkValidity)
+              {
+                  document.getElementById("e3").innerHTML=pass1.validationMessage;
+                  if(pass1.validationMessage.toString().length!=0)
+                      check=0;
+              }   
+                             
+             if(acity.checkValidity)
+              {
+                  console.log("required");
+                  document.getElementById("e4").innerHTML=acity.validationMessage;
+                  if(acity.validationMessage.toString().length!=0)
+                      check=0;
+              }
+               
+              
+               
+                                
+             if(aadd.checkValidity)
+              {
+                  //console.log("required");
+                  document.getElementById("e5").innerHTML=aadd.validationMessage;
+                  if(aadd.validationMessage.toString().length!=0)
+                      check=0;
+              }
+               
+               if(check==0)
+                {
+                    return false;
+                }
+               else{
+                   return true;
+               }
+               
+               
+           }
+        </script>
+    
+    
+        
+    
+    
+</body>
+</html>

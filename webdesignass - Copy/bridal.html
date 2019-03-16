@@ -1,0 +1,265 @@
+<html>
+<head>
+<title>webdesignnew4</title>
+<style>
+body
+{ background-image:url('images103.jpg');
+  background-repeat:no-repeat;
+  background-size:1400px 700px;
+  background-position:left;
+
+}
+a
+{
+  text-decoration:none;
+   text-decoration-color: darkviolet;
+    color:white;
+    float:inherit;
+    margin-top: -20px;
+    font-size:20px;
+}    
+div
+{   font-size:30px;
+}
+#serid
+{width:10%;
+}
+#empid
+{width:10%;
+}
+input ,select,textarea
+{
+width:25%;
+}
+.g
+{ width:10%;}
+    
+    p{
+        color:red;
+    }    
+</style>
+
+
+
+<script type="text/javascript">
+
+    function validate()
+{
+ var ddl = document.getElementById("serid");
+ var selectedValue = ddl.options[ddl.selectedIndex].value;
+    if (selectedValue == "facial")
+   {
+    document.getElementById("empid").value = "2000";
+    alert("Amount differs depending on the facial type")
+}
+if (selectedValue == "manicure")
+   {
+    document.getElementById("empid").value = "1500";
+   }
+if (selectedValue == "pedicure")
+   {
+    document.getElementById("empid").value = "2500";
+   }
+if (selectedValue == "waxing")
+   {
+    document.getElementById("empid").value = "3000";
+   }
+if (selectedValue == "threading")
+   {
+    document.getElementById("empid").value = "1000";
+   }
+if (selectedValue == "SELECT SERVICE")
+   {
+    document.getElementById("empid").value = " ";
+   }
+
+
+    }
+
+
+</script>
+
+</head>
+<body bgcolor="purple" >
+<div  align="center">
+<section style='background-color: purple' >
+<img src="im2.png" style="height: 90px;" width="250px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+    
+</section>    
+    
+</div>
+    
+<form  align="center"   novalidate>
+    <h3 style="color:purple;" align="center">REGISTER FOR HOME SERVICE </h3>
+<table align="center">
+<tr>
+    <td>NAME</td>
+<td>
+   <input type="text"  id="aname1" placeholder="NAME" pattern="[a-zA-Z]*" title="Please enter on alphabets only" required><br>
+</td> 
+<td>
+    <p id="e1" ></p>
+</td>
+</tr>  
+
+    
+<tr>
+    <td>LOCATION</td>
+<td>
+    <textarea rows="5" cols="80" id="aadd"   placeholder="ADDRESS" required>
+</textarea> 
+<br>
+</td>   
+    <td>
+        <p id="e3"></p>
+    </td>
+</tr> 
+
+    <tr>
+    
+        <td>EMAIL ID</td>
+    <td>
+      <input type="email" id="aemail" placeholder="EMAIL ADDRESS" required><br> 
+    </td><td><p id="e6"></p></td>
+    </tr>
+    <tr>
+        <td>MOBILE NUMBER</td>
+    <td>
+        <input type="text" id="acontact1"  maxlength="10" placeholder="PHONE NO" pattern="[0-9]{10}" title="Please Enter 10 Digits Number"  required><br>
+    </td><td><p id="e7"></p></td>    
+    </tr>
+    <tr>
+        <td>WEDDING/ENGAGEMENT DATE<br>
+        <td><input type="date" id="adate" id="theDate" onclick="newDate()" min="2019-03-16" required><br>
+        </td>
+        <td><p id="e8"></p></td>
+    </tr>
+   
+</table>    
+
+ 
+
+
+
+
+
+  
+
+<center>
+    <input type="submit" id="abtn" value="BOOK IT" style="color:deeppink;">
+     <a href=app.html style="color:purple">Cancel</a>
+    
+</center>
+
+
+                                                       
+</form>
+    
+   
+   <script>
+     var btn3=document.getElementById('abtn');
+          btn3.onclick=function(e){
+              
+              var b1= check_validation3();
+              if(b1==false)
+                  {
+                      e.preventDefault();
+                  }
+          }
+           function check_validation3(){  
+            var name2=document.getElementById('aname1');
+            //var pass1=document.getElementById('acity');
+            var aadd=document.getElementById('aadd');
+            //var aser=document.getElementById('aser');   
+            //var aslot=document.getElementById('aslot');
+             var aemail=document.getElementById('aemail');
+             var name1=document.getElementById('acontact1');
+             var adate=document.getElementById('adate'); 
+                 check=1;
+               
+            //document.getElementById("err2").innerHTML="";  
+               
+             
+              
+               if(name2.checkValidity)
+              {
+                   console.log("required");
+                  document.getElementById("e1").innerHTML=name2.validationMessage;
+                  if(name2.validationMessage.toString().length!=0)
+                      check=0;
+              }   
+               
+                if(name1.checkValidity)
+              {
+                 // console.log("required");
+                  document.getElementById("e7").innerHTML=name1.validationMessage;
+                  if(name1.validationMessage.toString().length!=0)
+                      check=0;
+              }
+               
+             
+                             
+             
+               
+              
+               
+                                
+             if(aadd.checkValidity)
+              {
+                  //console.log("required");
+                  document.getElementById("e3").innerHTML=aadd.validationMessage;
+                  if(aadd.validationMessage.toString().length!=0)
+                      check=0;
+              }
+            
+               
+            
+               
+               
+               
+               
+               
+               
+            if(aemail.checkValidity)
+              {
+                  console.log("required");
+                  document.getElementById("e6").innerHTML=aemail.validationMessage;
+                  if(aemail.validationMessage.toString().length!=0)
+                      check=0;
+              }
+            
+               
+            
+              if(adate.checkValidity)
+              {
+                  document.getElementById("e8").innerHTML=adate.validationMessage;
+                  if(adate.validationMessage.toString().length!=0)
+                      check=0;
+              }
+               
+               if(acontact1.checkvalidity)
+                   
+              {
+                  document.getElementById("e7").innerHTML=acontact1.validationMessage;
+                  if(acontact1.validationMessage.toString().length!=0)
+                      check=0;
+              }   
+              
+               
+                if(check==0)
+                {
+                    return false;
+                }
+               else{
+                   return true;
+               }
+               
+             
+                
+           
+           }
+</script> 
+    
+    
+</body>
+</html>
