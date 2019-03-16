@@ -117,7 +117,7 @@ Phone: 044 - 66317569<br>
     
     
         <aside><center>
-            <form  onsubmit="return check_validation2(this);" method="GET" action="cusinsert.php" novalidate>
+            <form   novalidate>
         <h2>Send Us An Instant Message</h2>  
         <table>
             <tr> <td> NAME:&nbsp;&nbsp;&nbsp;<input type="text" id="cname" name="cname" placeholder="Name" pattern="[a-zA-Z]*" required ></td><td> <p id="e1" ></p>  
@@ -181,7 +181,7 @@ Phone: 044 - 66317569<br>
             var pass1=document.getElementById('cmobile');   
             var acity=document.getElementById('cmge');     
                  
-               
+               check=1;
                
                if(name2.checkValidity)
               {
